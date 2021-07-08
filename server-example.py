@@ -107,7 +107,8 @@ if __name__ == "__main__":
                 ua.SecurityPolicyType.Basic256Sha256_Sign])
 
     # setup our own namespace
-    uri = "http://examples.freeopcua.github.io"
+    #uri = "http://examples.freeopcua.github.io"
+    uri = str(sys.argv[4])
     idx = server.register_namespace(uri)
 
     # create a new node type we can instantiate in our address space
@@ -125,10 +126,17 @@ if __name__ == "__main__":
     # instanciate one instance of our device
     mydevice = server.nodes.objects.add_object(idx, "Device0001", dev)
     mydevice_var = mydevice.get_child(["{}:controller".format(idx), "{}:state".format(idx)])  # get proxy to our device state variable 
+    
     # create directly some objects and variables
-    myobj = server.nodes.objects.add_object(idx, "MyObject")
-    myvar = myobj.add_variable(idx, "MyVariable", 6.7)
-    mysin = myobj.add_variable(idx, "MySin", 0, ua.VariantType.Float)
+    #VADO A DEFINIRE IL NUOVO OGGETTO
+    obj = str(sys.argv[5])
+    myobj = server.nodes.objects.add_object(idx, obj)
+    
+    #VADO A DEFIENRE I VARI SENSORI
+    sensore1 = str(sys.argv[6])
+    sensore2 = str(sys.argv[7])
+    myvar = myobj.add_variable(idx, sensore1, 6.7)
+    mysin = myobj.add_variable(idx, sensore2, 0, ua.VariantType.Float)
     myvar.set_writable()    # Set MyVariable to be writable by clients
     mystringvar = myobj.add_variable(idx, "MyStringVariable", "Really nice string")
     mystringvar.set_writable()  # Set MyVariable to be writable by clients
