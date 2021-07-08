@@ -1,0 +1,20 @@
+{
+  "opcua": [
+    {
+      "ip": "ciao",
+      "port": "4840",
+      "uri": "http://examples.freeopcua.github.io"
+    },
+    {
+      "objects": [
+        {
+          "object_name": "ListaDeiSensori",
+          "variables": [
+            "Temperature_Sensor",
+            "Water_Sensor"
+          ]
+        }
+      ]
+    }
+  ]
+}
