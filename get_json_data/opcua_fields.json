@@ -1,7 +1,6 @@
 {
   "opcua": [
     {
-      "ip": "ciao",
       "port": "5555",
       "uri": "http://examples.freeopcua.github.io"
     },
