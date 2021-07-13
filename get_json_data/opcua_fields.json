@@ -2,9 +2,7 @@
   "opcua": [
     {
       "port": "5555",
-      "uri": "http://examples.freeopcua.github.io"
-    },
-    {
+      "uri": "http://examples.freeopcua.github.io",
       "objects": [
         {
           "object_name": "LISTE_ABC",
