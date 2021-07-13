@@ -1,7 +1,7 @@
 {
   "opcua": [
     {
-      "port": "5555",
+      "port": "5252",
       "uri": "http://examples.freeopcua.github.io"
     },
     {
@@ -9,8 +9,8 @@
         {
           "object_name": "ListaDeiSensoriaaaaaaaaaaaaa",
           "variables": [
-            "Temperature_Sensorsssssssssssss",
-            "Water_Sensorccccccccccccccc"
+            "TEMP_SS",
+            "LIGHT_SS"
           ]
         }
       ]
