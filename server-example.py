@@ -148,7 +148,7 @@ if __name__ == "__main__":
              #print(data["opcua"][0]["objects"][i]["variables"][j])
 
 
-    mysin = myobj.add_variable(idx, sensore2, 0, ua.VariantType.Float)
+    mysin = myobj.add_variable(idx, variable_0_0, 0, ua.VariantType.Float)
 
 '''
     obj = str(sys.argv[5])
