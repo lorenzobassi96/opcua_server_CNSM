@@ -135,14 +135,14 @@ if __name__ == "__main__":
     for i in range(0, dim_obj_list):
       dim_var_list = len(data["opcua"][0]["objects"][i]["variables"])
       globals()[f"obj_{i}"] = data["opcua"][0]["objects"][i]["object_name"]           #cration of: obj_0, obj_1
-      globals()[f"myobj_{i}"] = server.nodes.objects.add_object(idx, obj_{i})                #creation of: myobj_0, myobj_1
+      globals()[f"myobj_{i}"] = server.nodes.objects.add_object(idx, f"obj_{i}")                #creation of: myobj_0, myobj_1
       #print("-----------------------------------------")
       #print("i:", i)
       #print(data["opcua"][0]["objects"][i]["object_name"])
       for j in range(0, dim_var_list):
              globals()[f"variable_{i}_{j}"] = data["opcua"][0]["objects"][i]["variables"][j]      #creation of: variable_0_0, variable_0_1
-             globals()[f"myvar_{i}_{j}"] = myobj.add_variable(idx, variable_{i}_{j}, 6.7)                 #creation of: myvar_0_0, myvar_0_1
-             myvar_{i}_{j}.set_writable()
+             globals()[f"myvar_{i}_{j}"] = myobj.add_variable(idx, f"variable_{i}_{j}", 6.7)                 #creation of: myvar_0_0, myvar_0_1
+             f"myvar_{i}_{j}".set_writable()
              #print(variable_{i}_{j})
              #print(i,j)
              #print(data["opcua"][0]["objects"][i]["variables"][j])
