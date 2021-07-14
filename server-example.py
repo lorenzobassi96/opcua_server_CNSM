@@ -9,7 +9,9 @@ import time
 from math import sin
 import sys
 import random
+import json
 from opcua.ua import NodeId, NodeIdType
+
 
 sys.path.insert(0, "..")
 
@@ -147,6 +149,9 @@ if __name__ == "__main__":
 
     # create directly some objects and variables
     # READ OBJECTS AND VARIABLE FORM THE JSON FILE
+    with open('opcua_fields.json') as file:
+        data = json.load(file)
+
     dim_obj_list = len(data["opcua"][0]["objects"])
 
 
