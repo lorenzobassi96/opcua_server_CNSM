@@ -173,7 +173,7 @@ if __name__ == "__main__":
     multiply_node = myobj.add_method(idx, "multiply", multiply, [ua.VariantType.Int64, ua.VariantType.Int64], [ua.VariantType.Int64])
 '''
     # First a folder to organise our nodes
-    myfolder = server.nodes.objects.add_folder(idx, "myEmptyFolder")
+    #myfolder = server.nodes.objects.add_folder(idx, "myEmptyFolder")
     # instanciate one instance of our device
     mydevice = server.nodes.objects.add_object(idx, "Device0001", dev)
     mydevice_var = mydevice.get_child(["{}:controller".format(idx), "{}:state".format(idx)])  # get proxy to our device state variable 
