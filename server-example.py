@@ -149,6 +149,7 @@ if __name__ == "__main__":
 
 
     mysin = myobj.add_variable(idx, sensore2, 0, ua.VariantType.Float)
+
 '''
     obj = str(sys.argv[5])
     myobj = server.nodes.objects.add_object(idx, obj)
@@ -170,7 +171,7 @@ if __name__ == "__main__":
     myprop = myobj.add_property(idx, "myproperty", "I am a property")
     mymethod = myobj.add_method(idx, "mymethod", func, [ua.VariantType.Int64], [ua.VariantType.Boolean])
     multiply_node = myobj.add_method(idx, "multiply", multiply, [ua.VariantType.Int64, ua.VariantType.Int64], [ua.VariantType.Int64])
-
+'''
     # import some nodes from xml
     server.import_xml("custom_nodes.xml")
 
@@ -179,7 +180,7 @@ if __name__ == "__main__":
     # you probably want to create a custom event type, see other examples
     myevgen = server.get_event_generator()
     myevgen.event.Severity = 300
-'''
+
     # starting!
     server.start()
     print("Available loggers are: ", logging.Logger.manager.loggerDict.keys())
