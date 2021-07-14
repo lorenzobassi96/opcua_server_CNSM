@@ -127,6 +127,24 @@ if __name__ == "__main__":
     mydevice = server.nodes.objects.add_object(idx, "Device0001", dev)
     mydevice_var = mydevice.get_child(["{}:controller".format(idx), "{}:state".format(idx)])  # get proxy to our device state variable 
     
+   
+    # create directly some objects and variables
+    myobj = server.nodes.objects.add_object(idx, "MyObject")
+    myvar = myobj.add_variable(idx, "MyVariable", 6.7)
+    mysin = myobj.add_variable(idx, "MySin", 0, ua.VariantType.Float)
+    myvar.set_writable()    # Set MyVariable to be writable by clients
+    mystringvar = myobj.add_variable(idx, "MyStringVariable", "Really nice string")
+    mystringvar.set_writable()  # Set MyVariable to be writable by clients
+    myguidvar = myobj.add_variable(NodeId(uuid.UUID('1be5ba38-d004-46bd-aa3a-b5b87940c698'), idx, NodeIdType.Guid),
+                                   'MyStringVariableWithGUID', 'NodeId type is guid')
+    mydtvar = myobj.add_variable(idx, "MyDateTimeVar", datetime.utcnow())
+    mydtvar.set_writable()    # Set MyVariable to be writable by clients
+    myarrayvar = myobj.add_variable(idx, "myarrayvar", [6.7, 7.9])
+    myarrayvar = myobj.add_variable(idx, "myStronglytTypedVariable", ua.Variant([], ua.VariantType.UInt32))
+    myprop = myobj.add_property(idx, "myproperty", "I am a property")
+    mymethod = myobj.add_method(idx, "mymethod", func, [ua.VariantType.Int64], [ua.VariantType.Boolean])
+    multiply_node = myobj.add_method(idx, "multiply", multiply, [ua.VariantType.Int64, ua.VariantType.Int64], [ua.VariantType.Int64])
+
     # create directly some objects and variables
     # READ OBJECTS AND VARIABLE FORM THE JSON FILE
     dim_obj_list = len(data["opcua"][0]["objects"])
@@ -172,28 +190,7 @@ if __name__ == "__main__":
     mymethod = myobj.add_method(idx, "mymethod", func, [ua.VariantType.Int64], [ua.VariantType.Boolean])
     multiply_node = myobj.add_method(idx, "multiply", multiply, [ua.VariantType.Int64, ua.VariantType.Int64], [ua.VariantType.Int64])
 '''
-    # First a folder to organise our nodes
-    #myfolder = server.nodes.objects.add_folder(idx, "myEmptyFolder")
-    # instanciate one instance of our device
-    mydevice = server.nodes.objects.add_object(idx, "Device0001", dev)
-    mydevice_var = mydevice.get_child(["{}:controller".format(idx), "{}:state".format(idx)])  # get proxy to our device state variable 
-    # create directly some objects and variables
-    myobj = server.nodes.objects.add_object(idx, "MyObject")
-    myvar = myobj.add_variable(idx, "MyVariable", 6.7)
-    mysin = myobj.add_variable(idx, "MySin", 0, ua.VariantType.Float)
-    myvar.set_writable()    # Set MyVariable to be writable by clients
-    mystringvar = myobj.add_variable(idx, "MyStringVariable", "Really nice string")
-    mystringvar.set_writable()  # Set MyVariable to be writable by clients
-    myguidvar = myobj.add_variable(NodeId(uuid.UUID('1be5ba38-d004-46bd-aa3a-b5b87940c698'), idx, NodeIdType.Guid),
-                                   'MyStringVariableWithGUID', 'NodeId type is guid')
-    mydtvar = myobj.add_variable(idx, "MyDateTimeVar", datetime.utcnow())
-    mydtvar.set_writable()    # Set MyVariable to be writable by clients
-    myarrayvar = myobj.add_variable(idx, "myarrayvar", [6.7, 7.9])
-    myarrayvar = myobj.add_variable(idx, "myStronglytTypedVariable", ua.Variant([], ua.VariantType.UInt32))
-    myprop = myobj.add_property(idx, "myproperty", "I am a property")
-    mymethod = myobj.add_method(idx, "mymethod", func, [ua.VariantType.Int64], [ua.VariantType.Boolean])
-    multiply_node = myobj.add_method(idx, "multiply", multiply, [ua.VariantType.Int64, ua.VariantType.Int64], [ua.VariantType.Int64])
-
+    
     # import some nodes from xml
     server.import_xml("custom_nodes.xml")
 
