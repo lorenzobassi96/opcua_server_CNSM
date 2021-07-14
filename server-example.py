@@ -165,7 +165,7 @@ if __name__ == "__main__":
       for j in range(0, dim_var_list):
              globals()[f"variable_{i}_{j}"] = data["opcua"][0]["objects"][i]["variables"][j]      #creation of: variable_0_0, variable_0_1
              globals()[f"myvar_{i}_{j}"] = myobj.add_variable(idx, f"variable_{i}_{j}", 6.7)                 #creation of: myvar_0_0, myvar_0_1
-             [f"myvar_{i}_{j}"].set_writable()
+             globals()[f"myvar_{i}_{j}"].set_writable()
              #print(variable_{i}_{j})
              #print(i,j)
              #print(data["opcua"][0]["objects"][i]["variables"][j])
