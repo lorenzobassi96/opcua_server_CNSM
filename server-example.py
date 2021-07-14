@@ -167,29 +167,6 @@ if __name__ == "__main__":
 
 
     mysin = myobj.add_variable(idx, variable_0_0, 0, ua.VariantType.Float)
-
-'''
-    obj = str(sys.argv[5])
-    myobj = server.nodes.objects.add_object(idx, obj)
-    
-    #VADO A DEFIENRE I VARI SENSORI
-    sensore1 = str(sys.argv[6])
-    sensore2 = str(sys.argv[7])
-    myvar = myobj.add_variable(idx, sensore1, 6.7)
-    mysin = myobj.add_variable(idx, sensore2, 0, ua.VariantType.Float)
-    myvar.set_writable()    # Set MyVariable to be writable by clients
-    mystringvar = myobj.add_variable(idx, "MyStringVariable", "Really nice string")
-    mystringvar.set_writable()  # Set MyVariable to be writable by clients
-    myguidvar = myobj.add_variable(NodeId(uuid.UUID('1be5ba38-d004-46bd-aa3a-b5b87940c698'), idx, NodeIdType.Guid),
-                                   'MyStringVariableWithGUID', 'NodeId type is guid')
-    mydtvar = myobj.add_variable(idx, "MyDateTimeVar", datetime.utcnow())
-    mydtvar.set_writable()    # Set MyVariable to be writable by clients
-    myarrayvar = myobj.add_variable(idx, "myarrayvar", [6.7, 7.9])
-    myarrayvar = myobj.add_variable(idx, "myStronglytTypedVariable", ua.Variant([], ua.VariantType.UInt32))
-    myprop = myobj.add_property(idx, "myproperty", "I am a property")
-    mymethod = myobj.add_method(idx, "mymethod", func, [ua.VariantType.Int64], [ua.VariantType.Boolean])
-    multiply_node = myobj.add_method(idx, "multiply", multiply, [ua.VariantType.Int64, ua.VariantType.Int64], [ua.VariantType.Int64])
-'''
     
     # import some nodes from xml
     server.import_xml("custom_nodes.xml")
