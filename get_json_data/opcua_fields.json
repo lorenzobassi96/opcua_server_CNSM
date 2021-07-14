@@ -5,12 +5,33 @@
       "uri": "http://examples.freeopcua.github.io",
       "objects": [
         {
-          "object_name": "LISTE_ABC",
+          "object_name": "LISTE_ABC1",
           "variables": [
-            "LUCE",
-            "ACQUA"
+            "LUCE1",
+            "ACQUA1",
+            "GAS1"
+          ]
+        },
+        {
+        "object_name": "LISTE_ABC2",
+        "variables": [
+            "LUCE2",
+            "ACQUA2",
+            "GAS2",
+            "TERRA2"
+          ]
+        },
+        {
+        "object_name": "LISTE_ABC3",
+        "variables": [
+            "LUCE3",
+            "ACQUA32",
+            "GAS32",
+            "TERRA32",
+            "tess"
           ]
         }
+
       ]
     }
   ]
