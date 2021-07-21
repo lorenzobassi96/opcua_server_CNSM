@@ -207,10 +207,10 @@ if __name__ == "__main__":
         #sleep = sys.argv[3] if len(sys.argv) >= 5 else '1'
         #sleep = int(sys.argv[3])
         
-        if type(int(sys.argv[3])) != int:
-             sleep = 1
-        else:
+        if type(int(sys.argv[3])) == int:
              sleep = int(sys.argv[3])
+        else:
+             sleep = 1
         
         
         while 15 == 15:
