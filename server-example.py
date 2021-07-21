@@ -205,11 +205,14 @@ if __name__ == "__main__":
        
         
         #sleep = sys.argv[3] if len(sys.argv) >= 5 else '1'
-        sleep = int(sys.argv[3])
+        #sleep = int(sys.argv[3])
         
-        if type(sleep) != int:
+        if type(int(sys.argv[3])) != int:
              sleep = 1
-
+        else:
+             sleep = int(sys.argv[3])
+        
+        
         while 15 == 15:
               temp = random.randint(1,10)
               server.set_attribute_value(myvar_0_0.nodeid, ua.DataValue(temp))
