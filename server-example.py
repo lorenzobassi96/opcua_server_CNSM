@@ -201,8 +201,11 @@ if __name__ == "__main__":
         myevgen.trigger(message="This is BaseEvent")
         #server.set_attribute_value(myvar.nodeid, ua.DataValue(9.9))  # Server side write method which is a but faster than using set_value
         server.set_attribute_value(myvar_0_0.nodeid, ua.DataValue(9.9))  # Server side write method which is a but faster than using set_value
-
-        sleep = int(sys.argv[3])
+        
+       
+        
+        sleep = sys.argv[3] if len(sys.argv) >= 5 else '1'
+        #sleep = int(sys.argv[3])
 
         while 15 == 15:
               temp = random.randint(1,10)
