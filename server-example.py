@@ -219,7 +219,7 @@ if __name__ == "__main__":
         
         #if sys.argv[4] == 'default_value':
         
-        if sys.argv[4] == ' http://examples.freeopcua.github.io':
+        if sys.argv[4] == 'http://examples.freeopcua.github.io':
             sleep = 1 
         else:
             sleep = int(sys.argv[4])
