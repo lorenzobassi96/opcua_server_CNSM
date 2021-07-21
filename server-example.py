@@ -204,8 +204,11 @@ if __name__ == "__main__":
         
        
         
-        sleep = sys.argv[3] if len(sys.argv) >= 5 else '1'
-        #sleep = int(sys.argv[3])
+        #sleep = sys.argv[3] if len(sys.argv) >= 5 else '1'
+        sleep = int(sys.argv[3])
+        
+        if type(sleep) != int:
+             sleep = 1
 
         while 15 == 15:
               temp = random.randint(1,10)
