@@ -213,7 +213,7 @@ if __name__ == "__main__":
         #     sleep = 1
         
         sleepstr = sys.argv[4] if len(sys.argv) >= 5 else 1
-        
+        print(sleepstr)
         sleep = int(sleepstr)
         
         while 15 == 15:
