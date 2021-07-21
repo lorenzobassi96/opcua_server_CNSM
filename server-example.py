@@ -217,7 +217,9 @@ if __name__ == "__main__":
         #sleep = int(sleepstr)
         
         
-        if sys.argv[4] == 'default_value':
+        #if sys.argv[4] == 'default_value':
+        
+        if sys.argv[4] == ' http://examples.freeopcua.github.io':
             sleep = 1 
         else:
             sleep = int(sys.argv[4])
