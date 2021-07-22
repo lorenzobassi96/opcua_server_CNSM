@@ -224,13 +224,17 @@ if __name__ == "__main__":
         
         #if sys.argv[4] == 'default_value':
         
-        if sys.argv[4] == 'http://examples.freeopcua.github.io':
+        #if sys.argv[4] == 'http://examples.freeopcua.github.io':
+        #    sleep = 1 
+        #else:
+        #    sleep = int(sys.argv[4])
+        
+        if sys.argv[3] == 'default_value':
             sleep = 1 
         else:
-            sleep = int(sys.argv[4])
-        
-        
+            sleep = int(sys.argv[3])
         print("sleep in input: ",sleep)
+        
         
         while 15 == 15:
               temp = random.randint(1,10)
