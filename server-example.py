@@ -95,6 +95,9 @@ if __name__ == "__main__":
 
     hostname = str(sys.argv[1])
     port = str(sys.argv[2])
+    
+    print("hostname in input: ",hostname)
+    print("port in input: ",port)
 
     domain = "opc.tcp://"
     ddd = ":"
@@ -111,6 +114,7 @@ if __name__ == "__main__":
     # setup our own namespace
     #uri = "http://examples.freeopcua.github.io"
     uri = str(sys.argv[3])
+    print("uri in input: ",uri)
     idx = server.register_namespace(uri)
 
     # create a new node type we can instantiate in our address space
@@ -224,6 +228,8 @@ if __name__ == "__main__":
         else:
             sleep = int(sys.argv[4])
         
+        
+        print("sleep in input: ",sleep)
         
         while 15 == 15:
               temp = random.randint(1,10)
