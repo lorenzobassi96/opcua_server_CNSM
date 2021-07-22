@@ -113,7 +113,8 @@ if __name__ == "__main__":
 
     # setup our own namespace
     #uri = "http://examples.freeopcua.github.io"
-    uri = str(sys.argv[3])
+    #uri = str(sys.argv[3]) ******************************
+    uri = str(sys.argv[4])
     print("uri in input: ",uri)
     idx = server.register_namespace(uri)
 
