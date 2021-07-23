@@ -1,7 +1,7 @@
 {
   "opcua": [
     {
-      "port": "5555",
+      "port": "4840",
       "uri": "http://examples.freeopcua.github.io",
       "objects": [
         {
