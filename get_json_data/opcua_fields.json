@@ -5,45 +5,19 @@
       "uri": "http://examples.freeopcua.github.io",
       "objects": [
         {
-          "object_name": "LISTE_ABC1",
+          "object_name": "Device1",
           "variables": [
-            "LUCE1",
-            "ACQUA1",
-            "GAS1"
+            "Light",
+            "Water",
+            "Gas"
           ]
         },
         {
-        "object_name": "LISTE_ABC2",
+        "object_name": "Device2",
         "variables": [
-            "LUCE2",
-            "ACQUA2",
-            "GAS2",
-            "TERRA2"
-          ]
-        },
-        {
-        "object_name": "LISTE_ABC3",
-        "variables": [
-            "LUCE3",
-            "ACQUA32",
-            "GAS32",
-            "TERRA32",
-            "tess"
-          ]
-        },
-        {
-        "object_name": "LISTE_ABC4",
-        "variables": [
-            "LUCE3444444444",
-            "ACQUA444444444444444",
-            "GAS34",
-            "TERRA4444444444",
-            "tess44444444444",
-            "TERRA4444dggdgfdgf44",
-            "tess44444grgrhrhrhr444"
+            "Temperature"
           ]
         }
-
       ]
     }
   ]
